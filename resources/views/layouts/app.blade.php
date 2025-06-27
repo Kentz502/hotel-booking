@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Onixd Hotel - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -46,6 +46,7 @@
 
                     <!-- Page Heading -->
                     @yield('content')
+                </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -53,7 +54,6 @@
 
             <!-- Footer -->
             @include('layouts.footer')
-        </footer>
             <!-- End of Footer -->
 
         </div>
@@ -103,6 +103,10 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('template/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('template/js/demo/chart-pie-demo.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+
+
 
 </body>
 
