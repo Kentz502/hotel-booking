@@ -24,6 +24,15 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
+                            @if (count($hotels) < 1)
+                            <tbody>
+                                <tr>
+                                    <td colspan="11">
+                                        <p class="pt-3 text-center">No Data Found</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            @else
                             <tbody>
                                 @foreach ($hotels as $item)
                                 <tr>
@@ -46,6 +55,7 @@
                                 @include('pages.hotel.confirmation-delete')
                                 @endforeach
                             </tbody>
+                            @endif
                         </table>
                     </div>
                 </div>

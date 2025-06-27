@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="confirmationDelete-{{ $item->id }}" tabindex="-1" aria-labelledby="confirmationDeleteLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form action="/hotel/{{ $item->id }}" method="POST">
+    <form action="/room/{{ $item->id }}" method="POST">
     @csrf
     @method('DELETE')
         <div class="modal-content">
@@ -11,7 +11,7 @@
             <i class="fa fa-times"></i>
         </div>
         <div class="modal-body">
-            <span>Are you sure you want to delete this Hotel?</span>
+            <span>Are you sure you want to delete this Room?</span>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

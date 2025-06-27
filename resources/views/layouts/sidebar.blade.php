@@ -44,6 +44,12 @@
                     <span>Hotels</span></a>
             </li>
 
+            <li class="nav-item {{ request()->is('room*') ? 'active' : '' }}">
+                <a class="nav-link" href="/room">
+                    <i class="fas fa-fw fa-hotel"></i>
+                    <span>Rooms</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 

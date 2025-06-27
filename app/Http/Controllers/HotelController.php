@@ -29,7 +29,7 @@ class HotelController extends Controller
         return redirect('/hotel')->with('success', 'Hotel created successfully');
     }
 
-    public function  create()
+    public function create()
     {
         return view('pages.hotel.create');
     }
@@ -60,7 +60,6 @@ class HotelController extends Controller
     public function destroy($id)
     {
 
-        \Log::info('Destroy called', ['id' => $id, 'request' => request()->all()]);
         $hotel = Hotel::findOrFail($id);
         $hotel->delete();
 
