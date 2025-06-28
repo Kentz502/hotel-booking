@@ -24,6 +24,7 @@ Route::get('/room/{id}', [RoomController::class, 'show']);
 Route::put('/room/{id}', [RoomController::class, 'update']);
 Route::delete('/room/{id}', [RoomController::class, 'destroy']);
 
-Route::get('/', [AuthController::class, 'login']);
+Route::get('/', fn() => redirect('/login'));
+Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', [AuthController::class, 'logout']);

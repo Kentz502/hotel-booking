@@ -33,24 +33,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            $userStatus = Auth::user()->status;
-
-
-            if ($userStatus == 'submitted') {
-                $this->_logout($request);
-
-                return back()->withErrors([
-                    'email' => 'Your account is not approved by admin yet']
-                );
-            } else if($userStatus == 'rejected') {
-                $this->_logout($request);
-                return back()->withErrors([
-                    'email' => 'Your account is rejected by admin']
-                );
-            }
-
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->withErrors([
@@ -70,11 +53,11 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         if(!Auth::check()) {
-            return redirect('/');
+            return redirect('/login');
         }
 
         $this->_logout($request);
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

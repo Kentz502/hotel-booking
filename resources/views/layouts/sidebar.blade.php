@@ -1,54 +1,45 @@
-{{-- @php
-    @menus = [
+@php
+    $menus = [
         1 => [
             (object) [
                 'title' => 'Dashboard',
                 'path' => 'dashboard',
                 'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
+                (object) [
+                    'title' => 'Hotels',
+                    'path' => 'hotel',
+                    'icon' => 'fas fa-fw fa-hotel',
+        ],
+                (object) [
+                    'title' => 'Rooms',
+                    'path' => 'room',
+                    'icon' => 'fas fa-fw fa-hotel',
+        ],
     ],
+        2 => [
+            (object) [
+                'title' => 'Dashboard',
+                'path' => 'dashboard',
+                'icon' => 'fas fa-fw fa-tachometer-alt',
+        ],
+        ]
 ];
-@endphp --}}
+@endphp
 
 <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    {{-- <i class="fas fa-laugh-wink"></i> --}}
-                </div>
-                <div class="sidebar-brand-text mx-3">Onixd Hotel</div>
-            </a>
+            <@auth
+                @foreach ($menus[auth()->user()->role_id] as $menu)
+                    <li class="nav-item {{ request()->is($menu->path.'*') ? 'active' : '' }}">
+                        <a class="nav-link" href="/{{ $menu->path }}">
+                            <i class="{{ $menu->icon }}"></i>
+                                <span>{{ $menu->title }}</span></a>
+                    </li>
+                @endforeach
+            @endauth
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
-                <a class="nav-link" href="/dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            {{-- <div class="sidebar-heading">
-                Interface
-            </div> --}}
-
-            <li class="nav-item {{ request()->is('hotel*') ? 'active' : '' }}">
-                <a class="nav-link" href="/hotel">
-                    <i class="fas fa-fw fa-hotel"></i>
-                    <span>Hotels</span></a>
-            </li>
-
-            <li class="nav-item {{ request()->is('room*') ? 'active' : '' }}">
-                <a class="nav-link" href="/room">
-                    <i class="fas fa-fw fa-hotel"></i>
-                    <span>Rooms</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
