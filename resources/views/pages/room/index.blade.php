@@ -41,7 +41,7 @@
                                         <td>{{ $loop->iteration + $rooms->firstItem() - 1 }}</td>
                                         <td>{{ $item->hotel->name }}</td>
                                         <td>{{ $item->room_type }}</td>
-                                        <td>Rp {{ $item->price }} per night</td>
+                                        <td>Rp {{ $item->price }}</td>
                                         <td>{{ $item->capacity }}</td>
                                         <td>
                                             @if ($item->facilities)
