@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,7 @@ Route::post('/room', [RoomController::class, 'store']);
 Route::get('/room/{id}', [RoomController::class, 'show']);
 Route::put('/room/{id}', [RoomController::class, 'update']);
 Route::delete('/room/{id}', [RoomController::class, 'destroy']);
+
+Route::get('/', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'authenticate']);
+Route::post('/logout', [AuthController::class, 'logout']);
