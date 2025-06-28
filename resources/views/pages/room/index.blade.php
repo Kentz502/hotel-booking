@@ -41,7 +41,7 @@
                                         <td>{{ $loop->iteration + $rooms->firstItem() - 1 }}</td>
                                         <td>{{ $item->hotel->name }}</td>
                                         <td>{{ $item->room_type }}</td>
-                                        <td>Rp {{ $item->price }}</td>
+                                        <td>Rp {{ $item->price }} per night</td>
                                         <td>{{ $item->capacity }}</td>
                                         <td>
                                             @if ($item->facilities)
@@ -57,7 +57,10 @@
                                         <td>{{ $item->total_rooms }}</td>
                                          <td>
                                         <div class="d-flex align-items-center" style="gap: 10px;">
-                                            <a href="/room/{{ $item->id }}" class="d-inline-block btn btn-sm btn-warning">
+                                            <a href="/room/{{ $item->id }}" class="d-inline-block btn btn-sm btn-info">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="/room/{{ $item->id }}/edit" class="d-inline-block btn btn-sm btn-warning">
                                                 <i class="fas fa-pen"></i>
                                             </a>
                                             <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#confirmationDelete-{{ $item->id }}">

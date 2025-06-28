@@ -43,15 +43,17 @@ class RoomController extends Controller
     }
 
 
-    public function show()
+    public function show($id)
     {
-        return view('pages.room.show');
+        $room = Room::findOrFail($id);
+        return view('pages.room.show', compact('room'));
     }
 
     public function edit($id)
     {
+        $hotels = Hotel::all();
         $room = Room::findOrFail($id);
-        return view('pages.room.edit', compact('room'));
+        return view('pages.room.edit', compact('room', 'hotels'));
     }
 
     public function update(Request $request, $id)

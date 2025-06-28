@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-o text-gray-800">Create Rooms</h1>
+        <h1 class="h3 mb-0 text-gray-800">Create Rooms</h1>
     </div>
 
     <div class="row">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="room_type">Room Type</label>
-                        <input type="room_type" name="room_type" id="room_type" class="form-control @error('room_type') is-invalid @enderror" value="{{ old('room_type') }}">
+                        <input type="text" name="room_type" id="room_type" class="form-control @error('room_type') is-invalid @enderror" value="{{ old('room_type') }}">
                         @error('room_type')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
