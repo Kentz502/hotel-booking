@@ -8,19 +8,19 @@
     <div class="card shadow">
         <div class="card-body">
             <div class="mb-3">
-                <strong>Hotel</strong>
+                <strong>Hotel:</strong>
                 <div>{{ $room->hotel->name }}</div>
             </div>
             <div class="mb-3">
-                <strong>Room Type</strong>
+                <strong>Room Type:</strong>
                 <div>{{ $room->room_type }}</div>
             </div>
             <div class="mb-3">
-                <strong>Capacity</strong>
+                <strong>Capacity:</strong>
                 <div>{{ $room->capacity }}</div>
             </div>
             <div class="mb-3">
-                <strong>Facility</strong>
+                <strong>Facility:</strong>
                 @php
                     $facilities = is_array($room->facilities) ? $room->facilities : json_decode($room->facilities, true);
                 @endphp
@@ -35,7 +35,7 @@
                 @endif
             </div>
             <div class="mb-3">
-                <strong>Total Room</strong>
+                <strong>Total Room:</strong>
                 <div>{{ $room->total_rooms }}</div>
             </div>
         </div>
