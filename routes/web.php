@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
@@ -30,3 +31,6 @@ Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'registerView']);
 Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/profile', [UserController::class, 'profile_view'])->middleware('role:Admin,Customer');
+Route::post('/profile/{id}', [UserController::class, 'update_profile'])->middleware('role:Admin,Customer');
