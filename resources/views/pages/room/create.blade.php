@@ -59,8 +59,24 @@
                             <label class="form-check-label">Hot Water</label>
                         </div>
                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="facilities[]" value="Standard Bed"  {{ is_array(old('facilities')) && in_array('Standard Bed', old('facilities')) ? 'checked' : '' }}>
+                            <label class="form-check-label">Standard Bed</label>
+                        </div>
+                        <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="facilities[]" value="Bathub"  {{ is_array(old('facilities')) && in_array('Bathub', old('facilities')) ? 'checked' : '' }}>
                             <label class="form-check-label">Bathub</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="facilities[]" value="Fridge"  {{ is_array(old('facilities')) && in_array('Fridge', old('facilities')) ? 'checked' : '' }}>
+                            <label class="form-check-label">Fridge</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="facilities[]" value="King Sized Bed"  {{ is_array(old('facilities')) && in_array('King Sized Bed', old('facilities')) ? 'checked' : '' }}>
+                            <label class="form-check-label">King Sized Bed</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="facilities[]" value="Smart Robot"  {{ is_array(old('facilities')) && in_array('Smart Robot', old('facilities')) ? 'checked' : '' }}>
+                            <label class="form-check-label">Smart Robot</label>
                         </div>
                     </div>
                     <div class="form-group mb-3">

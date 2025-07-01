@@ -14,7 +14,12 @@
                 (object) [
                     'title' => 'Rooms',
                     'path' => 'room',
-                    'icon' => 'fas fa-fw fa-hotel',
+                    'icon' => 'fas fa-fw fa-bed',
+        ],
+                (object) [
+                    'title' => 'Bookings',
+                    'path' => 'booking',
+                    'icon' => 'fas fa-fw fa-book',
         ],
     ],
         2 => [
@@ -23,7 +28,12 @@
                 'path' => 'dashboard',
                 'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
-        ]
+            (object) [
+                'title' => 'Bookings',
+                'path' => 'booking',
+                'icon' => 'fas fa-fw fa-book',
+        ],
+    ],
 ];
 @endphp
 
